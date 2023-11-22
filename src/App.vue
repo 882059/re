@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
   <div>
     <p>
-    <router-link to="/">Go to Home</router-link>
-    <router-link to="/about">Go to About</router-link>
+    <router-link to="/1">Page 1</router-link>
+    <router-link to="/2">Page 2</router-link>
   </p>
   <router-view></router-view>
     <!-- <a href="https://vitejs.dev" target="_blank">
@@ -16,7 +16,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a> -->
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <!-- <HelloWorld msg="Vite + Vue" /> -->
 </template>
 
 <style scoped>

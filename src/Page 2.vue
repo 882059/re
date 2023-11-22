@@ -1,0 +1,4 @@
+<template>
+    <!-- WikiBreeze P2 start--><table><tr><th colspan="1" rowspan="1"><p>Example Text</p></th><th colspan="1" rowspan="1"><p></p></th><th colspan="1" rowspan="1"><p></p></th></tr><tr><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td></tr><tr><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td></tr></table><image-pro><img class="image" src="https://www.zjut.edu.cn/_upload/article/images/a0/36/aea67321496cb68360ff8a64ded4/36684fb9-0c42-477a-92e0-504cf9ac7c9f.jpg"><p>Edit your image note her</p></image-pro><!-- WikiBreeze P2 end-->
+
+</template>
