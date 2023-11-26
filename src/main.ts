@@ -1,9 +1,9 @@
 import { createApp } from 'vue'
-import './style.css'
 import App from './App.vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import P1 from './Page 1.vue'
-import P2 from './Page 2.vue'
+import P1 from './components/Page 1.vue'
+import P2 from './components/Page 2.vue'
+
 
 // 2. 定义一些路由
 // 每个路由都需要映射到一个组件。

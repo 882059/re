@@ -19,6 +19,10 @@
   <!-- <HelloWorld msg="Vite + Vue" /> -->
 </template>
 
+<style lang="scss">
+@import "./style/col.scss"
+</style>
+
 <style scoped>
 .logo {
   height: 6em;
