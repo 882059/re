@@ -20,10 +20,11 @@
 </template>
 
 <style lang="scss">
-@import "./style/col.scss"
+@import "./style/col.scss";
+@import "./style/content.scss";
 </style>
 
-<style scoped>
+<style lang="scss" scoped>
 .logo {
   height: 6em;
   padding: 1.5em;
