@@ -27,5 +27,6 @@ jobs:
               with:
                   host: ${{ secrets.ip }} #你的nginx服务器公网ip
                   username: ${{ secrets.name }} #你的nginx服务器用户名
+                  password: ${{ secrets.key }}
                   localDir: "dist" #你vue项目build好的文件的路径,每次服务器上会自动删除对应的文件夹后重新覆盖
-                  remoteDir: 'http://ych.95028.top/'
+                  remoteDir: '/var/www/html/index.nginx-debian.html'
