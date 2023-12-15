@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "build": "vue-tsc --noEmit && vite build && npm run generate-route-page",
+    "preview": "vite preview",
+    "generate-route-page": "node ./generate-route-page.js"
   },
   "dependencies": {
     "pinia": "^2.1.7",
