@@ -1,4 +1,10 @@
 <script setup lang="ts">
+// const routes = [
+//   // 将匹配所有内容并将其放在 `$route.params.pathMatch` 下
+//   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
+//   // 将匹配以 `/user-` 开头的所有内容，并将其放在 `$route.params.afterUser` 下
+//   { path: '/user-:afterUser(.*)', component: UserGeneric },
+// ]
 // import HelloWorld from './components/HelloWorld.vue'
 </script>
 

@@ -4,12 +4,6 @@
             "attrs": {
                 "textAlign": "left"
             },
-            "content": [
-                {
-                    "text": "Example TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample TextExample Text",
-                    "type": "text"
-                }
-            ],
             "type": "paragraph"
         }
     ],
