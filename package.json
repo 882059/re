@@ -12,7 +12,6 @@
   "dependencies": {
     "pinia": "^2.1.7",
     "sass": "^1.69.5",
-    "utils": "^0.3.1",
     "vue": "^3.3.8",
     "vue-router": "4"
   },
