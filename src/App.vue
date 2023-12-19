@@ -11,8 +11,8 @@
 <template>
   <div>
     <p>
-    <router-link to="/1">Page 1</router-link>
-    <router-link to="/2">Page 2</router-link>
+    <router-link to="/1">Page1</router-link>
+    <router-link to="/2">Page2</router-link>
   </p>
   <router-view></router-view>
     <!-- <a href="https://vitejs.dev" target="_blank">

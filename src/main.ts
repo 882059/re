@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import P1 from './components/Page 1.vue'
-import P2 from './components/Page 2.vue'
+import P1 from './components/Page1.vue'
+import P2 from './components/Page2.vue'
 
 
 // 2. 定义一些路由
