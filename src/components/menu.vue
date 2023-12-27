@@ -15,8 +15,6 @@
 </template>
 
 <script lang="ts" setup>
-// import Mon from './Page1.vue'
-// import Tue from './Page1.vue'
 
 </script>
 
