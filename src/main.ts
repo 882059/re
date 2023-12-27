@@ -3,12 +3,15 @@ import App from './App.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import P1 from './components/Page1.vue'
 import P2 from './components/Page2.vue'
+import H0 from './components/home.vue'
+
 
 
 // 2. 定义一些路由
 // 每个路由都需要映射到一个组件。
 // 我们后面再讨论嵌套路由。
 const routes = [
+  { path: '/', component: H0 },
   { path: '/1', component: P1 },
   { path: '/2', component: P2 },
 ]

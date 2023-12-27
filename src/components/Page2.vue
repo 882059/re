@@ -1,4 +1,6 @@
 <template>
-    <!-- WikiBreeze P2 start--><table><tr><th colspan="1" rowspan="1"><p>Example Text</p></th><th colspan="1" rowspan="1"><p></p></th><th colspan="1" rowspan="1"><p></p></th></tr><tr><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td></tr><tr><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td></tr></table><image-pro><img class="image" src="https://www.zjut.edu.cn/_upload/article/images/a0/36/aea67321496cb68360ff8a64ded4/36684fb9-0c42-477a-92e0-504cf9ac7c9f.jpg"><p>Edit your image note her</p></image-pro><!-- WikiBreeze P2 end-->
+<main class="content">
+        <!-- WikiBreeze P2 start--><h1>example TEXT</h1><image-pro><img src="https://static.igem.wiki/teams/4591/wiki/wikibreezeupload/human-practices/hp2/ed9e3d320119a602c853416e8f5717beabe8388a.jpg"><p>Edit image note here</p></image-pro><!-- WikiBreeze P2 end-->
 
+</main>
 </template>
