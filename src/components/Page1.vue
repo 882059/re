@@ -1,5 +1,5 @@
 <template>
-    <main class="content">
+    <main style="margin-top: 100px;">
         <!-- WikiBreeze P1 start-->
         <h1 style="text-align: center; padding-top: 50px;">Description</h1><!-- WikiBreeze P1 end-->
         <div class="row" style="justify-content: space-between;">
@@ -254,7 +254,7 @@
     text-align: left;
     border: 100px;
     border-radius: 10px;
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
     height: fit-content;
 }
 
