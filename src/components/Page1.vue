@@ -241,12 +241,40 @@
 </template>
 
 <script lang="ts" setup>
-// const routes = [
-//   // 将匹配所有内容并将其放在 `$route.params.pathMatch` 下
-//   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
-//   // 将匹配以 `/user-` 开头的所有内容，并将其放在 `$route.params.afterUser` 下
-//   { path: '/user-:afterUser(.*)', component: UserGeneric },
-// ]
+import { onMounted } from 'vue';
+
+
+
+
+function updateHeadings() {
+        let Headings = [] as { text: string, subHeading: { text: string }[] }[];
+        let HeadingOffsetTop = {} as { [key: string]: number };
+        let headingElements = document.querySelectorAll('h2,h3');
+        headingElements.forEach((heading) => {
+            heading.id = (heading.innerHTML.replace(/<[^>]+>/g, ''));
+
+            HeadingOffsetTop[heading.id] = (heading as HTMLElement).offsetTop + ((heading as HTMLElement).offsetParent as HTMLElement).offsetTop;
+            if (heading.nodeName == "H2") {
+                Headings.push({
+                    text: heading.innerHTML.replace(/<[^>]+>/g, ''),
+                    subHeading: []
+                });
+            } else {
+                if (Headings.length) {
+                    Headings[Headings.length - 1].subHeading.push({
+                        text: heading.innerHTML.replace(/<[^>]+>/g, '')
+                    });
+                }
+            }
+        })
+        console.log(Headings)
+    }
+
+    onMounted(()=>{
+        
+        updateHeadings()
+    })
+
 </script>
 
 <style>

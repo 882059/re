@@ -60,6 +60,11 @@
     </main>
 </template>
 
+<script lang="ts" setup>
+// import { onMounted } from 'vue';
+
+</script>
+
 <style>
 .dropbtn {
     background-color: #4CAF50;
@@ -237,22 +242,3 @@
 
 }
 </style>
-
-<script lang="ts" setup>
-// let nav_ = document.querySelectorAll('.nav-new > ul > li')
-// let mainPage = document.querySelectorAll('.mainPage')
-// window.addEventListener('scroll', function () {
-//     let scrollY = window.scrollY
-//     let screenH = window.innerHeight
-//     mainPage.forEach((nav) => {
-//         let navTop = nav.offsetTop
-//         let navBottom = nav.offsetTop + nav.offsetHeight
-//         if (scrollY >= navTop - screenH / 2 && scrollY < navBottom - screenH / 2) {
-//             nav_.forEach(function (item) {
-//                 item.classList.remove('current')
-//             })
-//             document.querySelector(`#${nav.id}_link`).classList.add('current')
-//         }
-//     })
-// })
-</script>
