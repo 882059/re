@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import P1 from './components/Page1.vue'
 import P2 from './components/Page2.vue'
 import H0 from './components/home.vue'
+import { createPinia } from 'pinia'
 
 const routes = [
   { path: '/', component: H0 },
@@ -17,6 +18,7 @@ const router = createRouter({
 })
 
 const app = createApp(App)
+app.use(createPinia())
 app.use(router)
 
 app.mount('#app')
