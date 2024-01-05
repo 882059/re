@@ -52,16 +52,33 @@
         <div class="dropdown">
             <button class="dropbtn">下拉菜单</button>
             <div class="dropdown-content">
-                <a href="http://www.runoob.com">菜鸟教程 1</a>
-                <a href="http://www.runoob.com">菜鸟教程 2</a>
-                <a href="http://www.runoob.com">菜鸟教程 3</a>
+                <div v-for="(heading, index) in headings" :key="index" class="headings-h1">
+            <div class="heading-h1" :class="{ current: convertToLink(heading.text) == currentHeading }">
+              <a class="heading-link" :href="'#' + convertToLink(heading.text)">{{
+                heading.text
+              }}</a>
+            </div>
+            <div v-for="(subHeading, subindex) in heading.subHeading" :key="subindex" class="heading-h2"
+              :class="{ current: convertToLink(subHeading.text) == currentHeading }">
+              <div class="heading-h2">
+                <a class="heading-link" :href="'#' + convertToLink(subHeading.text)">{{
+                  subHeading.text
+                }}</a>
+              </div>
+            </div>
+          </div>
             </div>
         </div>
     </main>
 </template>
 
 <script lang="ts" setup>
-// import { onMounted } from 'vue';
+import { useStatusStore } from '@/use'
+import { convertToLink } from '../use'
+import { storeToRefs } from 'pinia'
+
+const stateStore = useStatusStore()
+const { headings, currentHeading } = storeToRefs(stateStore)
 
 </script>
 

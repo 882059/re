@@ -241,39 +241,39 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted } from 'vue';
+// import { onMounted } from 'vue';
 
 
 
 
-function updateHeadings() {
-        let Headings = [] as { text: string, subHeading: { text: string }[] }[];
-        let HeadingOffsetTop = {} as { [key: string]: number };
-        let headingElements = document.querySelectorAll('h2,h3');
-        headingElements.forEach((heading) => {
-            heading.id = (heading.innerHTML.replace(/<[^>]+>/g, ''));
+// function updateHeadings() {
+//         let Headings = [] as { text: string, subHeading: { text: string }[] }[];
+//         let HeadingOffsetTop = {} as { [key: string]: number };
+//         let headingElements = document.querySelectorAll('h2,h3');
+//         headingElements.forEach((heading) => {
+//             heading.id = (heading.innerHTML.replace(/<[^>]+>/g, ''));
 
-            HeadingOffsetTop[heading.id] = (heading as HTMLElement).offsetTop + ((heading as HTMLElement).offsetParent as HTMLElement).offsetTop;
-            if (heading.nodeName == "H2") {
-                Headings.push({
-                    text: heading.innerHTML.replace(/<[^>]+>/g, ''),
-                    subHeading: []
-                });
-            } else {
-                if (Headings.length) {
-                    Headings[Headings.length - 1].subHeading.push({
-                        text: heading.innerHTML.replace(/<[^>]+>/g, '')
-                    });
-                }
-            }
-        })
-        console.log(Headings)
-    }
+//             HeadingOffsetTop[heading.id] = (heading as HTMLElement).offsetTop + ((heading as HTMLElement).offsetParent as HTMLElement).offsetTop;
+//             if (heading.nodeName == "H2") {
+//                 Headings.push({
+//                     text: heading.innerHTML.replace(/<[^>]+>/g, ''),
+//                     subHeading: []
+//                 });
+//             } else {
+//                 if (Headings.length) {
+//                     Headings[Headings.length - 1].subHeading.push({
+//                         text: heading.innerHTML.replace(/<[^>]+>/g, '')
+//                     });
+//                 }
+//             }
+//         })
+//         console.log(Headings)
+//     }
 
-    onMounted(()=>{
+//     onMounted(()=>{
         
-        updateHeadings()
-    })
+//         updateHeadings()
+//     })
 
 </script>
 
