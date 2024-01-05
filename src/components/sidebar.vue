@@ -51,7 +51,7 @@
     <main>
         <div class="dropdown">
             <button class="dropbtn">下拉菜单</button>
-            <div class="dropdown-content">
+            <div class="">
                 <div v-for="(heading, index) in headings" :key="index" class="headings-h1">
             <div class="heading-h1" :class="{ current: convertToLink(heading.text) == currentHeading }">
               <a class="heading-link" :href="'#' + convertToLink(heading.text)">{{
@@ -97,25 +97,6 @@ const { headings, currentHeading } = storeToRefs(stateStore)
     display: inline-block;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1
-}
-
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -126,136 +107,60 @@ const { headings, currentHeading } = storeToRefs(stateStore)
 
 /* 1234567890 */
 
-.container-content {
-    background-color: white;
-    /*opacity: 0.7;*/
-    display: flex;
-    width: 90%;
-    margin: 0 auto;
-    border-radius: 12px;
-}
+.heading {
+        font-weight: 700;
+        line-height: 2rem;
+        text-transform: uppercase;
+        font-size: 1rem;
+        letter-spacing: 0.4px;
+        color: var(--has-text-black);
+        cursor: pointer;
+      }
 
-.left-box {
-    font-size: 30px;
-    float: left;
-    /*background-color: white;*/
-    border-radius: 30px;
-    width: 25%;
-    /*display: flex;*/
-    opacity: 0.8;
-    margin-right: 40px;
-    padding-left: 25px;
-    padding-right: 20px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
+      .headings-h1,
+      .headings-h2 {
+        margin-bottom: 4px;
+        margin-top: 4px;
+        padding-left: 0;
+      }
 
-.left-box nav {
-    position: sticky;
-    top: 100px;
-}
+      .heading-h2 {
+        padding-left: 0.35rem;
+      }
 
-.content {
-    background-color: whitesmoke;
-    box-shadow: 8px 8px 8px 8px whitesmoke;
-    position: relative;
-    margin: 15px;
-    word-break: break-word;
-    border-radius: 30px;
-    opacity: 0.8;
-    float: right;
-    width: 75%;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
+      .heading-h1{
+           font-size: 1.2rem;
+       }
 
-.nav-new ul li {
-    margin: 5px;
-    list-style: none;
-    color: #121212;
-    font-size: 2.0rem;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    margin-left: 0.25em;
-}
+      .heading-h1.current,
+      .heading-h2.current {
+        display: block;
+        border-left: 3px solid var(--has-text-success);
+        transform: scale(1.1);
 
-.nav-new ul li div {
-    float: left;
-    max-width: 15px;
-    max-height: 15px;
-    box-sizing: border-box;
-    border: 1px solid;
-    color: #2E64EC;
-    border-radius: 20px;
-    transition: 0.5s;
-    margin-right: 8px;
-    height: 10vw;
-    width: 10vh;
-}
+        a {
+          color: var(--has-text-black);
+        }
+      }
 
-.nav-new ul li a {
-    float: right;
-}
+      .heading-h1,
+      .heading-h2 {
+        transition: all 0.15s ease-out;
+        border-left: 2px solid transparent;
+        margin-bottom: 3px;
+        margin-top: 3px;
 
-.nav-new>ul>li>a {
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.84);
+        a {
+          font-weight: 700;
+          font-size: 0.85rem;
 
-}
+        }
+      }
 
-.nav-new ul li {
-    list-style: none;
-}
+      .heading-h2 {
+        a {
+          font-size: 0.75rem;
+        }
+      }
 
-.current {
-    background-color: #e7e7e7;
-    border-radius: 6px;
-    width: 100%;
-    height: 45px;
-    list-style: disc;
-}
-
-.current div {
-    background-color: #2E64EC;
-}
-
-.mainPage {
-    /*display: block;*/
-    text-align: center;
-}
-
-.mainPage p {
-    clear: both;
-    font-size: 23px;
-    font-weight: normal;
-    line-height: 1.8;
-}
-
-.overview {
-    font-weight: bolder;
-    font-size: 40px;
-    color: #0b0b0b;
-    line-height: 1.5;
-
-}
-
-.mainPage .picture-box {
-    text-align: center;
-    position: relative;
-    /*width: 65%;*/
-}
-
-.picture-box img {
-    position: relative;
-    width: 80%;
-}
-
-.mainPage b {
-    text-align: center;
-
-}
 </style>

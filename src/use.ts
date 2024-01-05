@@ -19,7 +19,7 @@ export const useStatusStore = defineStore("status", () => {
     let HeadingOffsetTop = {} as { [key: string]: number };
     let headingElements = document.querySelectorAll("h2,h3");
     headingElements.forEach((heading) => {
-      // heading.id = convertToLink(heading.innerHTML.replace(/<[^>]+>/g, ''));
+      heading.id = convertToLink(heading.innerHTML.replace(/<[^>]+>/g, ''));
 
       HeadingOffsetTop[heading.id] =
         (heading as HTMLElement).offsetTop +
