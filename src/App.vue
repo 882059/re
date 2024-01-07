@@ -1,5 +1,5 @@
 <template>
-  <Menu v-show="!inMd"/>
+  <Menu v-show="true"/>
   <Header v-show="currentRoute != 'H0'"/>
     <div class="col-24 row" ref="main">
       <Sidebar class="col-md-0 sideBar" :class="[{ 'col-1': !toggleSidebar }, { 'col-3': toggleSidebar }]" ref="sideBarRef"
@@ -29,7 +29,7 @@ watch(height , () =>{
 const stateStore = useStatusStore()
 const sideBarRef = ref();
 const { width } = useElementSize(sideBarRef)
-const { toggleSidebar, inMd , sidebarAppear} = storeToRefs(stateStore)
+const { toggleSidebar, sidebarAppear} = storeToRefs(stateStore)
 
 watch(width, () => {
   stateStore.SidebarAppear(width.value == 0)
