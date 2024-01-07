@@ -40,6 +40,7 @@ export const useStatusStore = defineStore('status', () => {
         })
         headingOffsetTop.value = HeadingOffsetTop;
         headings.value = Headings;
+        console.log(headings)
     }
     // function RouteDestiny(val: string) {
     //     to.value = val

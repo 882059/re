@@ -1,13 +1,11 @@
 <template>
   <Menu v-show="!inMd"/>
-  <div style="root_bg">
     <div class="col-24 row" ref="main">
       <Sidebar class="col-md-0 sideBar" :class="[{ 'col-1': !toggleSidebar }, { 'col-3': toggleSidebar }]" ref="sideBarRef"
-        v-show="currentRoute != 'Home'"/>
+        v-show="currentRoute != 'H0'"/>
       <router-view class="col-20 col-md-24 offset-md-0 main" 
         :class="[{ 'offset-0': toggleSidebar },{ 'offset-1': !toggleSidebar },{'full-content': !sidebarAppear}]" />
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">
