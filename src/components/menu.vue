@@ -1,7 +1,7 @@
 <template>
     <main class="menu">
         <ul class="row">
-            <li style="margin-left: 50%;">
+            <li style="margin-left: 40%;">
                 <router-link to="/">Home</router-link>
             </li>
             <li> 
