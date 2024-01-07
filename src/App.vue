@@ -1,5 +1,6 @@
 <template>
   <Menu v-show="!inMd"/>
+  <Header v-show="currentRoute != 'H0'"/>
     <div class="col-24 row" ref="main">
       <Sidebar class="col-md-0 sideBar" :class="[{ 'col-1': !toggleSidebar }, { 'col-3': toggleSidebar }]" ref="sideBarRef"
         v-show="currentRoute != 'H0'"/>
@@ -9,6 +10,7 @@
 </template>
 
 <script setup lang="ts">
+import Header from "@/components/header.vue"
 import Menu from "./components/menu.vue";
 import Sidebar from "./components/sidebar.vue";
 import { RouterView } from 'vue-router'

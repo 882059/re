@@ -8,7 +8,6 @@ export const themeMode = useColorMode();
 export const useStatusStore = defineStore('status', () => {
     const loading = ref(false)
     const headings = ref([] as { text: string, subHeading: { text: string }[] }[])
-    // const to = ref('/' + profile.teamName + '/')
     const toggleSidebar = useLocalStorage('toggleSidebar', false) as Ref<boolean>;
     const headingOffsetTop = ref({} as { [key: string]: number });
     const sidebarAppear = ref(true)
@@ -40,11 +39,7 @@ export const useStatusStore = defineStore('status', () => {
         })
         headingOffsetTop.value = HeadingOffsetTop;
         headings.value = Headings;
-        console.log(headings)
     }
-    // function RouteDestiny(val: string) {
-    //     to.value = val
-    // }
     function ToggleSidebar(val: boolean) {
         toggleSidebar.value = val
     }

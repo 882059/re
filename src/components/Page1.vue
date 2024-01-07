@@ -1,7 +1,6 @@
 <template>
     <main style="margin-top: 100px;">
-        <!-- WikiBreeze P1 start-->
-        <h1 style="text-align: center; padding-top: 50px;">Description</h1><!-- WikiBreeze P1 end-->
+        <!-- WikiBreeze P1 start--><!-- WikiBreeze P1 end-->
         <div class="row" style="justify-content: space-between;">
             <div class="P1-1 col-2"><!-- WikiBreeze P1.1 start-->
                 <p></p><!-- WikiBreeze P1.1 end-->
@@ -241,8 +240,8 @@
 </template>
 
 <script lang="ts" setup>
-
-
+import { currentRoute } from '@/main';
+console.log(currentRoute)
 
 </script>
 
