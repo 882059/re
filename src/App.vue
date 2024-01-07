@@ -1,18 +1,40 @@
+<template>
+  <Menu v-show="!inMd"/>
+  <div style="root_bg">
+    <div class="col-24 row" ref="main">
+      <Sidebar class="col-md-0 sideBar" :class="[{ 'col-1': !toggleSidebar }, { 'col-3': toggleSidebar }]" ref="sideBarRef"
+        v-show="currentRoute != 'Home'"/>
+      <router-view class="col-20 col-md-24 offset-md-0 main" 
+        :class="[{ 'offset-0': toggleSidebar },{ 'offset-1': !toggleSidebar },{'full-content': !sidebarAppear}]" />
+    </div>
+  </div>
+</template>
+
 <script setup lang="ts">
 import Menu from "./components/menu.vue";
 import Sidebar from "./components/sidebar.vue";
-</script>
+import { RouterView } from 'vue-router'
+import { ref, watch } from 'vue';
+import { storeToRefs } from 'pinia'
+import { useStatusStore } from '@/use'
+import { currentRoute } from "@/main"
+import { useElementSize } from '@vueuse/core';
+const main = ref()
+const { height } = useElementSize(main)
 
-<template>
-  <Menu v-show="true" />
-  <div class="">
-    <Sidebar v-show="true" />
-  </div>
-  <div>
-    <router-view></router-view>
-  </div>
-  <!-- <Sidebar v-show="true" /> -->
-</template>
+watch(height , () =>{
+  stateStore.updateHeadings();
+})
+
+const stateStore = useStatusStore()
+const sideBarRef = ref();
+const { width } = useElementSize(sideBarRef)
+const { toggleSidebar, inMd , sidebarAppear} = storeToRefs(stateStore)
+
+watch(width, () => {
+  stateStore.SidebarAppear(width.value == 0)
+})
+</script>
 
 <style lang="scss">
 @import "./style/col.scss";
@@ -20,5 +42,7 @@ import Sidebar from "./components/sidebar.vue";
 </style>
 
 <style lang="scss" scoped>
-
+.sideBar , .main{
+  transition: width 0.5s ease-in-out, margin-left 0.5s ease-in-out;
+}
 </style>

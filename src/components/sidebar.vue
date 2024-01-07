@@ -1,84 +1,55 @@
 <template>
-    <!-- <div class="container-content">
-        <section class="left-box">
-            <nav class="nav-new">
-                <ul>
-                    <li class="current" id="page1_link">
-                        <div></div>
-                        <a href="#page1">Overview</a>
-                    </li>
-                    <li id="page2_link">
-                        <div></div>
-                        <a href="#page2">Background</a>
-                    </li>
-                    <li id="page3_link">
-                        <div></div>
-                        <a href="#page3">Hub_gene Selection</a>
-                    </li>
-                </ul>
-            </nav>
-        </section>
-    </div>
-    <section class="content">
-        <div class="mainPage" id="page1">
-            <p><span class="overview">Overview</span><br>
-                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                <br>
-                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-            </p>
+    <div class="main" id="sideBar">
+        <div class="button toggle" :class="{ 'sidebar-open': toggleSidebar }"
+            @click="stateStore.ToggleSidebar(toggleSidebar ? false : true)" v-if="!inMd">
+            <div class="icon" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-        <div class="mainPage" id="page2">
-            <p><span class="overview">1 Background</span><br>
-                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxvxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-            </p>
-            <br>
-
-            <br>
-            <br>
-
-            <br>
-            <p>
-                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxvxxxxxxxxxxxxxxxxxxxx
-            </p>
-        </div>
-        <div class="mainPage" id="page3">
-            <p><span class="overview">2 Hub_gene
-                    Selection</span><br>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-            </p>
-        </div>
-    </section> -->
-
-    <main>
-        <div class="dropdown">
-            <button class="dropbtn">下拉菜单</button>
-            <div class="">
-                <div v-for="(heading, index) in headings" :key="index" class="headings-h1">
-                    <div class="heading-h1" :class="{ current: convertToLink(heading.text) == currentHeading }">
-                        <a class="heading-link" :href="'#' + convertToLink(heading.text)">{{
-                            heading.text
-                        }}</a>
-                    </div>
-                    <div v-for="(subHeading, subindex) in heading.subHeading" :key="subindex" class="heading-h2"
-                        :class="{ current: convertToLink(subHeading.text) == currentHeading }">
-                        <div class="heading-h2">
-                            <a class="heading-link" :href="'#' + convertToLink(subHeading.text)">{{
-                                subHeading.text
+        <div class="catalog" :class="{ 'sidebar-open': toggleSidebar }">
+            <div class="aside-container">
+                <a class="heading" @click="scrollToTop()">{{ router.currentRoute.value.name }}</a>
+                <div class="heading-container">
+                    <div v-for="(heading, index) in headings" :key="index" class="headings-h1">
+                        <div class="heading-h1" :class="{ current: convertToLink(heading.text) == currentHeading }">
+                            <a class="heading-link" :href="'#' + convertToLink(heading.text)">{{
+                                heading.text
                             }}</a>
+                        </div>
+                        <div v-for="(subHeading, subindex) in heading.subHeading" :key="subindex" class="heading-h2"
+                            :class="{ current: convertToLink(subHeading.text) == currentHeading }">
+                            <div class="heading-h2">
+                                <a class="heading-link" :href="'#' + convertToLink(subHeading.text)">{{
+                                    subHeading.text
+                                }}</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
 </template>
 
 <script lang="ts" setup>
-import { useStatusStore } from '@/use'
-import { convertToLink } from '../use'
+import { watch } from 'vue'
+import { convertToLink, useStatusStore } from '@/use'
 import { storeToRefs } from 'pinia'
+import router from '@/main'
 
 const stateStore = useStatusStore()
-const { headings, currentHeading } = storeToRefs(stateStore)
+const { headings, currentHeading, toggleSidebar, inMd } = storeToRefs(stateStore)
+function scrollToTop() {
+    window.scrollTo({ top: 100, behavior: 'smooth' })
+}
+
+watch(inMd, (val) => {
+    if (val) {
+        stateStore.ToggleSidebar(false)
+    }
+})
 
 </script>
 
@@ -93,9 +64,26 @@ const { headings, currentHeading } = storeToRefs(stateStore)
 }
 
 .dropdown {
-    position: fixed;
+    position: relative;
     display: inline-block;
 }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
 
 .dropdown:hover .dropdown-content {
     display: block;

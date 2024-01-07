@@ -241,43 +241,12 @@
 </template>
 
 <script lang="ts" setup>
-// import { onMounted } from 'vue';
 
 
-
-
-// function updateHeadings() {
-//         let Headings = [] as { text: string, subHeading: { text: string }[] }[];
-//         let HeadingOffsetTop = {} as { [key: string]: number };
-//         let headingElements = document.querySelectorAll('h2,h3');
-//         headingElements.forEach((heading) => {
-//             heading.id = (heading.innerHTML.replace(/<[^>]+>/g, ''));
-
-//             HeadingOffsetTop[heading.id] = (heading as HTMLElement).offsetTop + ((heading as HTMLElement).offsetParent as HTMLElement).offsetTop;
-//             if (heading.nodeName == "H2") {
-//                 Headings.push({
-//                     text: heading.innerHTML.replace(/<[^>]+>/g, ''),
-//                     subHeading: []
-//                 });
-//             } else {
-//                 if (Headings.length) {
-//                     Headings[Headings.length - 1].subHeading.push({
-//                         text: heading.innerHTML.replace(/<[^>]+>/g, '')
-//                     });
-//                 }
-//             }
-//         })
-//         console.log(Headings)
-//     }
-
-//     onMounted(()=>{
-        
-//         updateHeadings()
-//     })
 
 </script>
 
-<style>
+<style lang="scss" scoped>
 .P1-1 {
     text-align: left;
     border: 100px;
@@ -291,4 +260,166 @@
     border: 100px;
     border-radius: 10px;
     background-color: antiquewhite;
-}</style>
+}
+
+
+.main {
+    box-sizing: border-box;
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+    padding: 0;
+    margin-top: 2.7rem;
+    margin-bottom: 3em;
+
+    a {
+        text-decoration: none;
+        color: var(--has-text-dark-grey);
+    }
+
+    .catalog {
+        width: 100%;
+        height: fit-content;
+        padding-top: 0rem;
+        border-radius: 0 0.75rem 0.75rem 0;
+        overflow: hidden;
+
+        .aside-container {
+            overflow: hidden;
+            width: calc(100vw / 24 * 3);
+            opacity: 0;
+            font-family: 'Segoe UI';
+            padding: 0.5rem;
+            transition:
+                opacity 0.25s cubic-bezier(0.62, 0, 1, 1),
+                width 0.5s ease-in-out;
+
+            .heading {
+                font-weight: 700;
+                /* // line-height: 2rem; */
+                text-transform: uppercase;
+                font-size: 1rem;
+                letter-spacing: 0.4px;
+                color: var(--has-text-black);
+                cursor: pointer;
+            }
+
+            .headings-h1,
+            .headings-h2 {
+                margin-bottom: 4px;
+                margin-top: 4px;
+                padding-left: 0;
+            }
+
+            .heading-h2 {
+                padding-left: 0.35rem;
+            }
+
+            /* // .heading-h1{
+      //     font-size: 1.2rem;
+      // } */
+
+            .heading-h1.current,
+            .heading-h2.current {
+                display: block;
+                border-left: 3px solid var(--has-text-success);
+                transform: scale(1.1);
+
+                a {
+                    color: var(--has-text-black);
+                }
+            }
+
+            .heading-h1,
+            .heading-h2 {
+                transition: all 0.15s ease-out;
+                border-left: 2px solid transparent;
+                margin-bottom: 3px;
+                margin-top: 3px;
+
+                a {
+                    font-weight: 700;
+                    font-size: 0.85rem;
+
+                }
+            }
+
+            .heading-h2 {
+                a {
+                    font-size: 0.75rem;
+                }
+            }
+
+        }
+    }
+
+    .catalog.sidebar-open {
+        padding-bottom: 1rem;
+
+        .aside-container {
+            opacity: 1;
+            /* // width: 100%; */
+        }
+    }
+
+    /* // transition: width 0.5s ease-in-out; */
+    .toggle {
+        padding: 2px;
+        width: 2.25rem;
+        color: #070000;
+        border: 0px solid #000;
+        padding-top: 0.375rem;
+        padding-right: 0.5rem;
+        margin-left: 1rem;
+        border-radius: 0 0.75rem 0.75rem 0;
+        height: 2rem;
+        cursor: pointer;
+
+        .icon {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 1.25rem;
+            height: 1.25rem;
+            margin-left: auto;
+
+            span {
+                /* // margin: 50% 50% auto auto; */
+                display: inline-block;
+                width: 100%;
+                height: 3px;
+                border-radius: 2px;
+                background-color: var(--has-text-dark-grey);
+                transition: transform 0.3s ease;
+            }
+
+            span:nth-child(2) {
+                margin: 6px 0;
+            }
+        }
+    }
+
+    .toggle.sidebar-open {
+        .icon {
+            span:nth-child(1) {
+                transform: rotate(45deg) translate3d(5.5px, 5.5px, 0);
+            }
+
+            span:nth-child(2) {
+                transform: scale3d(0, 1, 1);
+            }
+
+            span:nth-child(3) {
+                transform: rotate(-45deg) translate3d(6px, -6px, 0);
+            }
+
+            span:nth-child(1),
+            span:nth-child(3) {
+                transform-origin: center;
+            }
+        }
+    }
+}
+</style>
