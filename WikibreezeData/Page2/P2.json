@@ -29,7 +29,12 @@
                     },
                     "content": [
                         {
-                            "text": "Figure.1",
+                            "marks": [
+                                {
+                                    "type": "bold"
+                                }
+                            ],
+                            "text": "Fig.1",
                             "type": "text"
                         }
                     ],
