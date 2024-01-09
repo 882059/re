@@ -7,6 +7,7 @@ const { width } = useWindowSize();
 export const themeMode = useColorMode();
 export const useStatusStore = defineStore('status', () => {
     const loading = ref(false)
+    const to = ref('/' + profile.teamName + '/')
     const headings = ref([] as { text: string, subHeading: { text: string }[] }[])
     const toggleSidebar = useLocalStorage('toggleSidebar', false) as Ref<boolean>;
     const headingOffsetTop = ref({} as { [key: string]: number });
@@ -40,6 +41,9 @@ export const useStatusStore = defineStore('status', () => {
         headingOffsetTop.value = HeadingOffsetTop;
         headings.value = Headings;
     }
+    function RouteDestiny(val: string) {
+        to.value = val
+    }
     function ToggleSidebar(val: boolean) {
         toggleSidebar.value = val
     }
@@ -60,9 +64,15 @@ export const useStatusStore = defineStore('status', () => {
         return width.value < 1000
     });
 
-    return { loading, headings, toggleSidebar, inMd, headingOffsetTop, currentHeading, y, sidebarAppear, setLoading, updateHeadings, ToggleSidebar, SidebarAppear }
+    return { loading, headings, to, toggleSidebar, inMd, headingOffsetTop, currentHeading, y, sidebarAppear, setLoading, updateHeadings, RouteDestiny, ToggleSidebar, SidebarAppear }
 })
 
 export function convertToLink(name: string) {
   return name.toLowerCase().replace(/ /g, '-')
+}
+
+export const profile = {
+    teamName: "zjut-china",
+    year: "2024",
+    TEAM_NAME: "ZJUT-China",
 }
