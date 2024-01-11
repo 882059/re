@@ -1,6 +1,5 @@
 <template>
-    <main style="margin-top: 100px;">
-        <h1>Description</h1>
+    <main>
         <!-- WikiBreeze P1 start--><!-- WikiBreeze P1 end-->
         <div class="row" style="justify-content: space-between;">
             <div class="P1-1 col-2"><!-- WikiBreeze P1.1 start-->

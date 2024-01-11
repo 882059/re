@@ -13,9 +13,9 @@ const pinia = createPinia()
 const stateStore = useStatusStore(pinia)
 
 const routes = [
-  { path: '/', component: H0 },
-  { path: '/1', component: P1 },
-  { path: '/2', component: P2 },
+  { name:'Home', path: '/', component: H0 },
+  { name:'Page1', path: '/1', component: P1 },
+  { name:'Page2', path: '/2', component: P2 },
 ]
 
 const router = createRouter({
@@ -48,9 +48,7 @@ router.beforeEach((to) => {
 router.afterEach((_to, _from, failure) => {
   stateStore.setLoading(false)
   if (failure) {
-    // console.log(to, from, failure);
-    // reolad the page with the new url
-    // window.location.href = failure.to.fullPath;
+    
   }
   nextTick(() => {
     stateStore.updateHeadings()

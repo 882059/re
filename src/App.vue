@@ -1,9 +1,9 @@
 <template>
-  <Menu v-show="true"/>
-  <Header v-show="currentRoute != 'H0'"/>
+  <Menu v-show="!inMd"/>
+  <Header v-show="currentRoute != 'Home'"/>
     <div class="col-24 row" ref="main">
       <Sidebar class="col-md-0 sideBar" :class="[{ 'col-1': !toggleSidebar }, { 'col-3': toggleSidebar }]" ref="sideBarRef"
-        v-show="currentRoute != 'H0'"/>
+        v-show="currentRoute != 'Home'"/>
       <router-view class="col-20 col-md-24 offset-md-0 main" 
         :class="[{ 'offset-0': toggleSidebar },{ 'offset-1': !toggleSidebar },{'full-content': !sidebarAppear}]" />
     </div>
@@ -29,7 +29,7 @@ watch(height , () =>{
 const stateStore = useStatusStore()
 const sideBarRef = ref();
 const { width } = useElementSize(sideBarRef)
-const { toggleSidebar, sidebarAppear} = storeToRefs(stateStore)
+const { toggleSidebar, sidebarAppear, inMd } = storeToRefs(stateStore)
 
 watch(width, () => {
   stateStore.SidebarAppear(width.value == 0)

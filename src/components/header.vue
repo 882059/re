@@ -21,7 +21,7 @@
   
     h1 {
       position: relative;
-      margin: 0;
+      margin: 50px;
       font-size: 5rem;
       text-align: center;
       max-width: 100%;
@@ -37,15 +37,7 @@
     }
   }
   
-  html.dark header h1 {
-    --color-header: #6eb3a2;
-  }
-  
-  html header h1 {
-    --color-header: rgb(255, 255, 255);
-  }
-  
   header h1 {
-    color: var(--color-header);
+    color: black;
   }
   </style>
