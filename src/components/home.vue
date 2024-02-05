@@ -1,5 +1,5 @@
 <template>
-    <main class="row" style="margin-top: 100px; justify-content: space-between;">
+    <main class="row" style="margin-top: 200px; justify-content: space-between;">
         <div class="P1-1 col-11">
             <p>logo1</p>
         </div>
