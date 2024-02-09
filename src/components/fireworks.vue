@@ -26,7 +26,7 @@
     </canvas>
 
     <!-- 背景音乐 -->
-    <audio id="bgm" src="static/mp3/bgm.mp3" loop autoplay>
+    <audio id="bgm" src="" loop autoplay>
         您的浏览器不支持 audio 标签。
     </audio>
 
