@@ -30,7 +30,7 @@
         right: 0;
         overflow: hidden;
         background-color: #ddfc7f;
-        position: absolute;
+        position: fixed !important;
         width: 100%;
         height: 5%;
     }

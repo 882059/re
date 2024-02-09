@@ -20,7 +20,7 @@
     }
   
     h1 {
-      position: relative;
+      // position: relative;
       margin: 50px;
       font-size: 5rem;
       text-align: center;

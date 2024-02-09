@@ -7,12 +7,11 @@ $xl: 1200px;
 .row {
     display: flex;
     flex-wrap: wrap;
-    position: relative;
+    // position: relative;
     box-sizing: border-box;
     width: 100%;
 }
 
-// Define base col style
 .col {
     flex: 1 0 0%;
 }
