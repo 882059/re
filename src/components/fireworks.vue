@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>新年烟花</title>
     <link rel="icon" type="image/x-icon" href="https://pic.imgdb.cn/item/61f794ad2ab3f51d91b07a1e.png">
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
 
@@ -26,7 +26,7 @@
     </canvas>
 
     <!-- 背景音乐 -->
-    <audio id="bgm" src="" loop autoplay>
+    <audio id="bgm" src="../bgm/bgm.mp3" loop autoplay>
         您的浏览器不支持 audio 标签。
     </audio>
 
