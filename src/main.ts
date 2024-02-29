@@ -4,7 +4,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import P1 from './components/Page1.vue'
 import P2 from './components/Page2.vue'
 import H0 from './components/home.vue'
-import Fire from './components/fireworks.vue'
 import { createPinia } from 'pinia'
 import { profile, useStatusStore } from '@/use'
 import { computed } from 'vue';
@@ -17,7 +16,6 @@ const routes = [
   { name:'Home', path: '/', component: H0 },
   { name:'Page1', path: '/1', component: P1 },
   { name:'Page2', path: '/2', component: P2 },
-  { name:'Fireworks', path: '/3', component: Fire },
 ]
 
 const router = createRouter({
