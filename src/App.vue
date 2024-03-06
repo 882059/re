@@ -17,7 +17,7 @@ import { RouterView } from 'vue-router'
 import { ref, watch } from 'vue';
 import { storeToRefs } from 'pinia'
 import { useStatusStore } from '@/use'
-import { currentRoute } from "@/main"
+import { currentRoute } from "@/router/index"
 import { useElementSize } from '@vueuse/core';
 const main = ref()
 const { height } = useElementSize(main)

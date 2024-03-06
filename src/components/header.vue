@@ -4,7 +4,7 @@
   </header>
 </template>
 <script setup lang="ts">
-import { currentRoute } from '@/main'
+import { currentRoute } from '@/router'
 </script>
 <style lang="scss" scoped>
 header {

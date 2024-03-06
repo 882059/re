@@ -37,7 +37,7 @@
 import { watch } from 'vue'
 import { convertToLink, useStatusStore } from '@/use'
 import { storeToRefs } from 'pinia'
-import router from '@/main'
+import router from '@/router'
 
 const stateStore = useStatusStore()
 const { headings, currentHeading, toggleSidebar, inMd } = storeToRefs(stateStore)
