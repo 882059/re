@@ -4,6 +4,7 @@ import { profile, useStatusStore } from '@/use'
 import App from '@/App.vue'
 import router, { currentRoute } from '@/router'
 import { useTitle } from '@vueuse/core'
+import imagePro from './components/imagePro.vue'
 
 const pinia = createPinia()
 const stateStore = useStatusStore(pinia)
@@ -39,3 +40,4 @@ useTitle(
 app.use(pinia)
 app.use(router)
 app.mount('#app')
+app.component('image-pro', imagePro)
