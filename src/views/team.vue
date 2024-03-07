@@ -49,6 +49,16 @@
         introduction: "",
         imgUrl: ''
       },
+      {
+        name: '',
+        introduction: "",
+        imgUrl: ''
+      },
+      {
+        name: '',
+        introduction: "",
+        imgUrl: ''
+      },
     ],
     'Wet group': [
       {
@@ -152,7 +162,6 @@
           width: 100%;
           aspect-ratio: 1/0.3;
           position: relative;
-          // bottom: 0;
           box-sizing: border-box;
   
           h4 {
@@ -177,7 +186,7 @@
         align-items: center;
         display: flex;
         transform-style: preserve-3d;
-        transform: rotateY(180deg);
+        transform: rotateX(180deg);
         backface-visibility: hidden;
         perspective: 1000px;
   
@@ -229,11 +238,11 @@
   
     .card:hover {
       .contentA {
-        transform: rotateY(180deg);
+        transform: rotateX(180deg);
       }
   
       .contentB {
-        transform: rotateY(0);
+        transform: rotateX(0);
       }
     }
   

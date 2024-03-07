@@ -1,7 +1,7 @@
 .content {
     font-size: 1.4rem;
-    // background: var(--bg-float);
-    // box-sizing: border-box;
+    background: #ffffff;
+    box-sizing: border-box;
     margin-top: 100px;
     margin-bottom: 0;
     padding: 2.5rem;
@@ -19,10 +19,11 @@
     }
 
     h1 {
-        color: var(--them-h1);
+        color: #6eb3a2;
     }
 
     h2 {
+        text-align: center;
         font-size: 1.5em;
         margin-bottom: 0.5714em;
     }

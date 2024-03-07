@@ -2,20 +2,22 @@
      <nav :class="`menu`" ref="nav">
     <div :class="`ribbon ${isFloat}`"></div>
     <ul class="nav-items">
-      <li
+      <!-- <li
         :class="`indicator ${isFloat}`"
         :style="{
           left: `${indicator_X}px`,
           width: `${indicator_W}px`
         }"
-      ></li>
-      <li class="nav-item nav-logo">
+      ></li> -->
+      <div class="col-24">
+        <li class="nav-logo">
         <Logo class="logo" />
       </li>
-      <li v-for="(heading, index) in headings" :key="index" class="nav-item" ref="HeadingElements">
+      </div>
+        <li v-for="(heading, index) in headings" :key="index" class="nav-item" ref="HeadingElements">
         <div
           v-if="typeof heading == 'object'"
-          class="nav-link toggle"
+          class="col-24 nav-link toggle"
           @mouseenter="handleMouseEnter(index)"
           @mouseleave="handleMouseLeave()"
         >
@@ -120,7 +122,7 @@ function handleMouseLeave() {
   padding: 0 0 0 0;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   color: #ffffff00;
   height: 60px;
   width: 100%;
@@ -129,7 +131,7 @@ function handleMouseLeave() {
 
   .ribbon {
     top: 0;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.708) , rgb(255, 255, 255));
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.481) , rgb(255, 255, 255));
     position: absolute;
     height: 0px;
     width: 100%;
@@ -142,25 +144,22 @@ function handleMouseLeave() {
   }
 
   .ribbon.float {
-    height: 60px;
+    height: 120px;
   }
 }
 
 .nav-items {
+  flex-wrap: wrap;
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   list-style: none;
-  margin: 0 auto 0 auto;
-  padding: 0;
   height: 60px;
-}
-
-.line{
-  width: 100%;
-  height: 60px;
+  margin-right:0 ;
 }
 
 .nav-logo {
+  position: relative;
+  margin: auto;
   padding: 8px;
 
   .logo {
@@ -186,7 +185,7 @@ function handleMouseLeave() {
   width: 40px;
 }
 
-.nav-link.toggle::after {
+/* .nav-link.toggle::after {
   content: '';
   display: inline-block;
   margin-left: 0.355em;
@@ -195,7 +194,7 @@ function handleMouseLeave() {
   border-right: 0.3em solid transparent;
   border-bottom: 0;
   border-left: 0.3em solid transparent;
-}
+} */
 
 .nav-link {
   display: block;
