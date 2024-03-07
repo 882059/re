@@ -3,7 +3,7 @@
       <div class="link">
         <img src="../assets/vue.svg" alt="logo" width="60" height="60" />
       </div>
-      <span> ZJUT-2023 </span>
+      <span> ZJUT-2024 </span>
     </router-link>
   </template>
   <script setup lang="ts">
@@ -20,14 +20,14 @@
     .link {
       height: 100%;
       img {
-        height: 100%;
+        height: 40px;
       }
       margin-right: 5px;
     }
     span {
       height: 100%;
       font-family: Museo Sans Rounded;
-      font-size: 1em;
+      font-size: 2em;
       // background: linear-gradient(to right, #ff5dce, #178aff);
       background-color: #3d3d3d;
       background-clip: text;

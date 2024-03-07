@@ -86,7 +86,6 @@ function reset_position() {
     indicator_X.value = HeadingElements.value[headingMap[currentRoute.value]]['offsetLeft']
     indicator_W.value = HeadingElements.value[headingMap[currentRoute.value]]['offsetWidth']
   } catch (e) {
-    // console.warn(e);
   }
 }
 
@@ -156,12 +155,17 @@ function handleMouseLeave() {
   height: 60px;
 }
 
+.line{
+  width: 100%;
+  height: 60px;
+}
+
 .nav-logo {
   padding: 8px;
 
   .logo {
     height: 100%;
-    font-size: 40px;
+    font-size: 1rem;
     max-width: initial;
   }
 }
@@ -210,11 +214,12 @@ function handleMouseLeave() {
     }
 
     .nav-logo {
+      align-items: center;
       padding: 13px;
 
       .logo {
         height: 100%;
-        font-size: 30px;
+        font-size: 1rem;
       }
     }
 
