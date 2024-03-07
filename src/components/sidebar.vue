@@ -57,7 +57,7 @@ watch(inMd, (val) => {
 .main {
     box-sizing: border-box;
     position: sticky;
-    top: 120px;
+    top: 160px;
     height: fit-content;
     padding: 0;
     margin-top: 2.7rem;
