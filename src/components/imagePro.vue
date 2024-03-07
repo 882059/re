@@ -77,13 +77,11 @@ onMounted(() => {
   })
 })
 
-let width_full = 0
 let height_full = 0
 let width_actual = 0
 
 function getFullViewPosition() {
   img.value.className = 'full-view final-position'
-  width_full = img.value.width
   height_full = img.value.height
   width_actual = (img.value.naturalWidth / img.value.naturalHeight) * height_full
   img.value.className = ''
@@ -96,7 +94,6 @@ function updateStyle() {
   img.value.style.height = ''
   img.value.className = 'full-view final-position'
   img.value.style.top = img.value.style.left = ''
-  width_full = img.value.width
   height_full = img.value.height
   width_actual = (img.value.naturalWidth / img.value.naturalHeight) * height_full
   img.value.className = 'full-view'
