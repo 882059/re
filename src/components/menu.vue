@@ -1,7 +1,7 @@
 <template>
      <nav :class="`menu`" ref="nav">
     <div :class="`ribbon ${isFloat}`"></div>
-    <ul class="nav-items col-md-22 col-20">
+    <ul class="nav-items">
       <li
         :class="`indicator ${isFloat}`"
         :style="{
@@ -10,7 +10,7 @@
         }"
       ></li>
       <li class="nav-item nav-logo">
-        <!-- <Logo class="logo" /> -->
+        <Logo class="logo" />
       </li>
       <li v-for="(heading, index) in headings" :key="index" class="nav-item" ref="HeadingElements">
         <div
@@ -49,7 +49,7 @@
 </template>
 
 <script lang="ts" setup>
-// import Logo from './logoWithName.vue'
+import Logo from './logowithname.vue'
 import router from '@/router'
 import { useElementSize } from '@vueuse/core'
 import { ref, onMounted, watch, computed } from 'vue'
@@ -122,7 +122,7 @@ function handleMouseLeave() {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  color: #fff;
+  color: #ffffff00;
   height: 60px;
   width: 100%;
   left: 0;
@@ -130,7 +130,7 @@ function handleMouseLeave() {
 
   .ribbon {
     top: 0;
-    background-color: #333;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.708) , rgb(255, 255, 255));
     position: absolute;
     height: 0px;
     width: 100%;
@@ -157,7 +157,6 @@ function handleMouseLeave() {
 }
 
 .nav-logo {
-  margin-right: auto;
   padding: 8px;
 
   .logo {
@@ -197,7 +196,7 @@ function handleMouseLeave() {
 .nav-link {
   display: block;
   padding: 0 20px;
-  color: #fff;
+  color: #000000;
   text-decoration: none;
   font-size: 18px;
   line-height: 60px;
@@ -305,6 +304,6 @@ html .indicator {
 }
 
 .indicator.float {
-  background-color: rgb(70, 70, 70);
+  background-color: rgb(18 186 149 / 44%);
 }
 </style>
