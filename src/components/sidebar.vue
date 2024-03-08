@@ -10,7 +10,7 @@
         </div>
         <div class="catalog" :class="{ 'sidebar-open': toggleSidebar }">
             <div class="aside-container">
-                <a class="heading" @click="scrollToTop()">{{ router.currentRoute.value.name }}</a>
+                <a class="heading" @click="set()">{{ router.currentRoute.value.name }}</a>
                 <div class="heading-container">
                     <div v-for="(heading, index) in headings" :key="index" class="headings-h1">
                         <div class="heading-h1" :class="{ current: convertToLink(heading.text) == currentHeading }">
@@ -37,13 +37,15 @@
 import { watch } from 'vue'
 import { convertToLink, useStatusStore } from '@/use'
 import { storeToRefs } from 'pinia'
-import router from '@/router'
+import router from '@/router/index'
 
 const stateStore = useStatusStore()
 const { headings, currentHeading, toggleSidebar, inMd } = storeToRefs(stateStore)
-function scrollToTop() {
-    window.scrollTo({ top: 100, behavior: 'smooth' })
-}
+function set() {
+    window.scrollTo({ 
+    top: 0, 
+    behavior: "smooth" 
+});}
 
 watch(inMd, (val) => {
     if (val) {
