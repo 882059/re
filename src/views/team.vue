@@ -157,7 +157,7 @@
         }
   
         .card-body {
-          background-color: var(--bg-card);
+          background-color: rgba(0, 43, 75, 0.269);
           padding: 0.75rem 1rem;
           width: 100%;
           aspect-ratio: 1/0.3;
