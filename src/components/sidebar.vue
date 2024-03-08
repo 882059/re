@@ -10,20 +10,23 @@
         </div>
         <div class="catalog" :class="{ 'sidebar-open': toggleSidebar }">
             <div class="aside-container">
-                <a class="heading" @click="set()">{{ router.currentRoute.value.name }}</a>
+                <a class="heading" @click="set()">{{
+                router.currentRoute.value.name
+            }}</a>
                 <div class="heading-container">
                     <div v-for="(heading, index) in headings" :key="index" class="headings-h1">
-                        <div class="heading-h1" :class="{ current: convertToLink(heading.text) == currentHeading }">
-                            <a class="heading-link" :href="'#' + convertToLink(heading.text)">{{
-                                heading.text
-                            }}</a>
+                        <div class="heading-h1" :class="{
+                current: convertToLink(heading.text) == currentHeading,
+            }">
+                            <a class="heading-link" :href="'#' + convertToLink(heading.text)">{{ heading.text }}</a>
                         </div>
                         <div v-for="(subHeading, subindex) in heading.subHeading" :key="subindex" class="heading-h2"
-                            :class="{ current: convertToLink(subHeading.text) == currentHeading }">
+                            :class="{
+                current: convertToLink(subHeading.text) == currentHeading,
+            }">
                             <div class="heading-h2">
-                                <a class="heading-link" :href="'#' + convertToLink(subHeading.text)">{{
-                                    subHeading.text
-                                }}</a>
+                                <a class="heading-link" :href="'#' + convertToLink(subHeading.text)">{{ subHeading.text
+                                    }}</a>
                             </div>
                         </div>
                     </div>
@@ -34,25 +37,27 @@
 </template>
 
 <script lang="ts" setup>
-import { watch } from 'vue'
-import { convertToLink, useStatusStore } from '@/use'
-import { storeToRefs } from 'pinia'
-import router from '@/router/index'
+import { watch } from "vue";
+import { convertToLink, useStatusStore } from "@/use";
+import { storeToRefs } from "pinia";
+import router from "@/router/index";
 
-const stateStore = useStatusStore()
-const { headings, currentHeading, toggleSidebar, inMd } = storeToRefs(stateStore)
+const stateStore = useStatusStore();
+const { headings, currentHeading, toggleSidebar, inMd } =
+    storeToRefs(stateStore);
+    
 function set() {
-    window.scrollTo({ 
-    top: 0, 
-    behavior: "smooth" 
-});}
+    window.scrollTo({
+        top: 100,
+        behavior: "smooth",
+    });
+}
 
 watch(inMd, (val) => {
     if (val) {
-        stateStore.ToggleSidebar(false)
+        stateStore.ToggleSidebar(false);
     }
-})
-
+});
 </script>
 
 <style lang="scss" scoped>
@@ -81,10 +86,9 @@ watch(inMd, (val) => {
             overflow: hidden;
             width: fit-content;
             opacity: 0;
-            font-family: 'Segoe UI';
+            font-family: "Segoe UI";
             padding-left: 2rem;
-            transition:
-                opacity 0.25s cubic-bezier(0.62, 0, 1, 1),
+            transition: opacity 0.25s cubic-bezier(0.62, 0, 1, 1),
                 width 0.5s ease-in-out;
 
             .heading {
@@ -128,7 +132,6 @@ watch(inMd, (val) => {
                 a {
                     font-weight: 700;
                     font-size: 0.85rem;
-
                 }
             }
 
@@ -137,7 +140,6 @@ watch(inMd, (val) => {
                     font-size: 0.75rem;
                 }
             }
-
         }
     }
 
