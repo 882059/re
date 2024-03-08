@@ -289,7 +289,7 @@ function handleMouseLeave() {
   bottom: 10px;
   left: 0;
   width: 60px;
-  height: 40px;
+  height: 50px;
   border-radius: 5px;
   transform: translateX(0);
   transition:
