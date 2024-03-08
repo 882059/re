@@ -255,7 +255,7 @@ function handleMouseLeave() {
 }
 
 .nav-item-2:hover {
-  background-color: #c8c8c8;
+  background-color: #d4d4d4;
 }
 
 .nav-item-2 {
