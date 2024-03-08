@@ -53,7 +53,7 @@ export const useStatusStore = defineStore('status', () => {
     const currentHeading = computed(() => {
         let currentHeading = "";
         for (let heading in headingOffsetTop.value) {
-            if (y.value + 125 > headingOffsetTop.value[heading]) {
+            if (y.value +160 > headingOffsetTop.value[heading]) {
                 currentHeading = heading;
             }
         }
