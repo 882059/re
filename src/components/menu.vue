@@ -135,8 +135,7 @@ function handleMouseLeave() {
 
   .ribbon {
     top: 0;
-    background-image: linear-gradient( rgba(255, 243, 220, 0.449) , rgb(255, 243, 220));
-    background-image: linear-gradient(to left, rgba(255, 243, 220, 0.449) , rgb(255, 243, 220));
+    background-image: linear-gradient(to top, rgba(255, 243, 220, 0.379) , rgb(255, 231, 184));
     position: absolute;
     height: 0px;
     width: 100%;
@@ -203,7 +202,7 @@ function handleMouseLeave() {
 .nav-link {
   display: block;
   padding: 0 20px;
-  color: #000000;
+  color: #dcf6ffdd;
   text-decoration: none;
   font-size: 18px;
   line-height: 60px;
@@ -304,7 +303,7 @@ html.dark .indicator {
 }
 
 html .indicator {
-  --color-indicator: rgb(18 186 149 / 44%);
+  --color-indicator: rgba(0, 61, 107, 0.928);
 }
 
 .indicator {
@@ -312,6 +311,6 @@ html .indicator {
 }
 
 .indicator.float {
-  background-color: rgb(18 186 149 / 44%);
+  background-color: rgba(0, 61, 107, 0.928);
 }
 </style>

@@ -37,8 +37,7 @@ watch(width, () => {
 </script>
 
 <style lang="scss">
-@import "./style/col.scss";
-@import "./style/content.scss";
+@import "./style/index.scss";
 </style>
 
 <style lang="scss" scoped>

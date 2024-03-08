@@ -8,6 +8,7 @@ import { currentRoute } from '@/router'
 </script>
 <style lang="scss" scoped>
 header {
+  color: #8dcae1;
   width: 100%;
   padding: 3rem 0 2.5rem 0;
 
@@ -20,7 +21,7 @@ header {
   }
 
   h1 {
-    // position: relative;
+    position: relative;
     margin: 50px;
     font-size: 5rem;
     text-align: center;
@@ -35,9 +36,5 @@ header {
       font-size: 3rem;
     }
   }
-}
-
-header h1 {
-  color: black;
 }
 </style>

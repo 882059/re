@@ -43,12 +43,11 @@ import { storeToRefs } from "pinia";
 import router from "@/router/index";
 
 const stateStore = useStatusStore();
-const { headings, currentHeading, toggleSidebar, inMd } =
-    storeToRefs(stateStore);
+const { headings, currentHeading, toggleSidebar, inMd } = storeToRefs(stateStore);
     
 function set() {
     window.scrollTo({
-        top: 100,
+        top: 0,
         behavior: "smooth",
     });
 }
@@ -72,7 +71,7 @@ watch(inMd, (val) => {
 
     a {
         text-decoration: none;
-        color: var(--has-text-dark-grey);
+        color: hsl(0, 0%, 71%);
     }
 
     .catalog {
@@ -96,7 +95,7 @@ watch(inMd, (val) => {
                 text-transform: uppercase;
                 font-size: 1rem;
                 letter-spacing: 0.4px;
-                color: var(--has-text-black);
+                color: hsl(0, 0%, 96%);
                 cursor: pointer;
             }
 
@@ -114,11 +113,11 @@ watch(inMd, (val) => {
             .heading-h1.current,
             .heading-h2.current {
                 display: block;
-                border-left: 3px solid var(--has-text-success);
+                border-left: 3px solid hsl(142, 52%, 96%);
                 transform: scale(1.1);
 
                 a {
-                    color: var(--has-text-black);
+                    color: hsl(0, 0%, 96%);
                 }
             }
 
@@ -154,8 +153,8 @@ watch(inMd, (val) => {
     .toggle {
         padding: 2px;
         width: 2.25rem;
-        color: #070000;
-        border: 0px solid #000;
+        color: #e6ffff;
+        border: 0px solid #e6ffff;
         padding-top: 0.375rem;
         padding-right: 0.5rem;
         margin-left: 1rem;
@@ -178,7 +177,7 @@ watch(inMd, (val) => {
                 width: 100%;
                 height: 3px;
                 border-radius: 2px;
-                background-color: black;
+                background-color: #e6ffff;
                 transition: transform 0.3s ease;
             }
 

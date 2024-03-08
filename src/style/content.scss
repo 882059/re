@@ -1,8 +1,9 @@
 .content {
     font-size: 1.4rem;
-    background: #b7b7b7;
+    border-radius: 30px;
+    background: rgb(30,30,32);
     box-sizing: border-box;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 0;
     padding: 2.5rem;
     overflow: hidden;
@@ -15,15 +16,15 @@
     h6 {
         margin-top: 0;
         font-family: var(--vp-font-family-base);
-        color: var(--them-h2);
+        color: #8dcae1;
+        text-align: center;
     }
 
     h1 {
-        color: #6eb3a2;
+        color: rgb(39, 147, 255);
     }
 
     h2 {
-        text-align: center;
         font-size: 1.5em;
         margin-bottom: 0.5714em;
     }
@@ -44,7 +45,6 @@
     }
 
     h3 {
-        text-align: center;
         font-size: 1.2em;
         margin-bottom: 0.6666em;
     }
@@ -55,6 +55,7 @@
 
     p {
         font-family: Museo Sans Rounded, Lato, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+        color: #fff4ea;
 
         * {
             color: inherit;
@@ -74,7 +75,7 @@
 
     a,
     a * {
-        color: var(--them-h1);
+        color: rgb(39, 147, 255);
         text-decoration: none;
         display: inline-block;
         position: relative;
@@ -85,7 +86,7 @@
         margin-top: 0;
         margin-bottom: 0;
         position: absolute;
-        background-color: var(--them-h1);
+        background-color: rgb(39, 147, 255);
         transition: width 0.3s ease-in-out;
         width: 0;
         height: 2px;
@@ -241,7 +242,7 @@
     }
 
     .warn {
-        color: var(--has-text-warning);
+        color: hsl(48, 72%, 67%);
     }
 
     .vue-apexcharts{

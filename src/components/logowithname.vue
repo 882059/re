@@ -29,7 +29,7 @@
       font-family: Museo Sans Rounded;
       font-size: 2em;
       // background: linear-gradient(to right, #ff5dce, #178aff);
-      background-color: #3d3d3d;
+      background-color: #2c698e;
       background-clip: text;
       font-weight: 600;
       -webkit-background-clip: text;
