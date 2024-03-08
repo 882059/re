@@ -248,14 +248,14 @@ function handleMouseLeave() {
   font-size: 1rem;
   text-align: left;
   list-style: none;
-  background-color: #fff;
+  background-color: #fff7e7;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
 }
 
 .nav-item-2:hover {
-  background-color: #f2f2f2;
+  background-color: #c8c8c8;
 }
 
 .nav-item-2 {
@@ -289,7 +289,7 @@ function handleMouseLeave() {
   left: 0;
   width: 60px;
   height: 50px;
-  border-radius: 5px;
+  border-radius: 50px;
   transform: translateX(0);
   transition:
     left 0.2s cubic-bezier(0.33, 0.13, 0, 1),
