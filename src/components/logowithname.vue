@@ -11,11 +11,13 @@
   </script>
   <style lang="scss" scoped>
   a.logo {
+    max-width: 400px;
     margin: 0;
     padding: 0;
     display: flex;
     text-decoration-line: none;
     font-size: 1em;
+    
   
     .link {
       height: 100%;
@@ -28,7 +30,6 @@
       height: 100%;
       font-family: Museo Sans Rounded;
       font-size: 2em;
-      // background: linear-gradient(to right, #ff5dce, #178aff);
       background-color: #2c698e;
       background-clip: text;
       font-weight: 600;

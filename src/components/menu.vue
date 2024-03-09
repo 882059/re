@@ -226,7 +226,7 @@ function handleMouseLeave() {
     }
 
     .indicator {
-      height: 33px;
+      height: 40px;
       bottom: 13px;
     }
   }

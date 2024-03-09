@@ -1,5 +1,6 @@
 <template>
   <Menu v-show="!inMd"/>
+  <MenuMd v-show="inMd"/>
   <Header v-show="currentRoute != 'Home'"/>
     <div class="col-24 row" ref="main">
       <Sidebar class="col-md-0 sideBar" :class="[{ 'col-1': !toggleSidebar }, { 'col-3': toggleSidebar }]" ref="sideBarRef"
@@ -10,14 +11,15 @@
 </template>
 
 <script setup lang="ts">
-import Header from "@/components/header.vue"
+import Header from "@/components/header.vue";
 import Menu from "./components/menu.vue";
+import MenuMd from "./components/menuMd.vue";
 import Sidebar from "./components/sidebar.vue";
-import { RouterView } from 'vue-router'
+import { RouterView } from 'vue-router';
 import { ref, watch } from 'vue';
-import { storeToRefs } from 'pinia'
-import { useStatusStore } from '@/use'
-import { currentRoute } from "@/router/index"
+import { storeToRefs } from 'pinia';
+import { useStatusStore } from '@/use';
+import { currentRoute } from "@/router/index";
 import { useElementSize } from '@vueuse/core';
 const main = ref()
 const { height } = useElementSize(main)
