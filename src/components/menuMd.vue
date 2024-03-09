@@ -88,7 +88,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #fff;
+  color: #fff4ea;
   height: 60px;
   width: 100%;
   left: 0;
@@ -162,13 +162,13 @@ li {
         display: block;
         font-weight: 600;
         margin-bottom: 4px;
-        color: rgb(158, 158, 158);
+        color: #979797;
         margin: 0.5rem 0.7rem 0.5rem 0.7rem;
       }
 
       .nav-link,
       .nav-link-top:not(.toggle) {
-        color: var(--them-h2);
+        color: #fff4ea;
         text-decoration: underline;
       }
 
@@ -187,14 +187,14 @@ li {
       display: block;
       content: '';
       height: 2.5px;
-      background-color: rgb(157, 157, 157);
+      background-color: #fff4ea;
       width: 100%;
       margin-top: 1rem;
     }
 
     aside {
       a {
-        color: rgb(157, 157, 157);
+        color: #fff4ea;
       }
 
       .heading-h1,
@@ -216,7 +216,7 @@ li {
       }
 
       .current {
-        color: rgb(159, 226, 255);
+        color: #8dcae1;
         display: block;
         transform: scale(1.05);
       }
@@ -300,7 +300,7 @@ li {
     border-radius: 40%;
 
     .icon {
-      filter: drop-shadow(0 0 0.75rem #7ddcc7);
+      filter: drop-shadow(0 0 0.75rem #8dcae1);
     }
   }
 
@@ -329,7 +329,7 @@ li {
 html.dark {
   .toggle-sidebar-button:hover {
     .icon {
-      filter: drop-shadow(0 0 0.75rem #ffffff);
+      filter: drop-shadow(0 0 0.75rem #fff4ea);
     }
   }
 }
