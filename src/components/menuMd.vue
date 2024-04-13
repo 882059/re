@@ -88,7 +88,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #fff4ea;
+  color: #eaefff;
   height: 60px;
   width: 100%;
   left: 0;
@@ -216,7 +216,7 @@ li {
       }
 
       .current {
-        color: #8dcae1;
+        color: #d9a459;
         display: block;
         transform: scale(1.05);
       }
@@ -285,7 +285,7 @@ li {
         width: 100%;
         height: 2px;
         border-radius: 2px;
-        background-color: #00244a;
+        background-color: #d9a459;
         transition: transfrgb(0, 40, 72)0.3s ease;
       }
 

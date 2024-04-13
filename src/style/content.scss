@@ -1,7 +1,7 @@
 .content {
     font-size: 1.4rem;
     border-radius: 30px;
-    background: rgba(14, 31, 49, 0.52);
+    background: rgba(10, 34, 59, 0.753);
     box-sizing: border-box;
     margin-top: 50px;
     margin-bottom: 0;
@@ -16,12 +16,12 @@
     h6 {
         margin-top: 0;
         font-family: var(--vp-font-family-base);
-        color: #8dcae1;
+        color: #e5cab9;
         text-align: center;
     }
 
     h1 {
-        color: rgb(39, 147, 255);
+        color: #d9a459;
     }
 
     h2 {
@@ -55,7 +55,7 @@
 
     p {
         font-family: Museo Sans Rounded, Lato, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
-        color: #fff4ea;
+        color: #e5cab9;
 
         * {
             color: inherit;
@@ -75,7 +75,7 @@
 
     a,
     a * {
-        color: rgb(39, 147, 255);
+        color: #d9a459;
         text-decoration: none;
         display: inline-block;
         position: relative;
@@ -86,7 +86,7 @@
         margin-top: 0;
         margin-bottom: 0;
         position: absolute;
-        background-color: rgb(39, 147, 255);
+        background-color: #d9a459;
         transition: width 0.3s ease-in-out;
         width: 0;
         height: 2px;

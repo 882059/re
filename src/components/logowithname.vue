@@ -1,7 +1,7 @@
 <template>
     <router-link class="logo" :to="'/' + profile.teamName + '/'">
       <div class="link">
-        <img src="../assets/vue.svg" alt="logo" width="60" height="60" />
+        <img src="../assets/vite.svg" alt="logo" width="60" height="60" />
       </div>
       <span> ZJUT-2024 </span>
     </router-link>
@@ -30,7 +30,7 @@
       height: 100%;
       font-family: Museo Sans Rounded;
       font-size: 2em;
-      background-color: #2c698e;
+      background-color: #d9a459;
       background-clip: text;
       font-weight: 600;
       -webkit-background-clip: text;

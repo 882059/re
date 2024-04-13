@@ -101,7 +101,7 @@ onMounted(() => {
 })
 
 const isFloat = computed(() => {
-  if (y.value > 1) {
+  if (y.value > 0) {
     return 'float'
   } else {
     return ''
@@ -135,7 +135,7 @@ function handleMouseLeave() {
 
   .ribbon {
     top: 0;
-    background-image: linear-gradient(to top, rgba(224, 211, 187, 0.211) , rgb(255, 237, 200));
+    background-image: linear-gradient(to left, #0d2b607a , #030c1b);
     position: absolute;
     height: 0px;
     width: 100%;
@@ -202,7 +202,7 @@ function handleMouseLeave() {
 .nav-link {
   display: block;
   padding: 0 20px;
-  color: #dcf6ffdd;
+  color: #e5cab9;
   text-decoration: none;
   font-size: 18px;
   line-height: 60px;
@@ -248,14 +248,14 @@ function handleMouseLeave() {
   font-size: 1rem;
   text-align: left;
   list-style: none;
-  background-color: #fff7e7;
+  background-color: #e5cab9;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
 }
 
 .nav-item-2:hover {
-  background-color: #d4d4d4;
+  background-color: #e5cab9;
 }
 
 .nav-item-2 {
@@ -311,6 +311,6 @@ html .indicator {
 }
 
 .indicator.float {
-  background-color: rgba(0, 61, 107, 0.928);
+  background-color: rgba(0, 47, 98, 0.537);
 }
 </style>
