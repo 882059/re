@@ -135,7 +135,7 @@ function handleMouseLeave() {
 
   .ribbon {
     top: 0;
-    background-image: linear-gradient(to left, #0d2b607a , #030c1b);
+    background-image: linear-gradient(to left, #103c4391 , #071c20);
     position: absolute;
     height: 0px;
     width: 100%;
@@ -303,7 +303,7 @@ html.dark .indicator {
 }
 
 html .indicator {
-  --color-indicator: rgba(8, 26, 53, 0.654);
+  --color-indicator: #0a2429da;
 }
 
 .indicator {
@@ -311,6 +311,6 @@ html .indicator {
 }
 
 .indicator.float {
-  background-color: rgba(0, 47, 98, 0.537);
+  background-color: #103941;
 }
 </style>
