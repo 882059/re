@@ -149,8 +149,7 @@
           aspect-ratio: 1 / 1.3;
           object-fit: cover;
           align-items: center;
-          border-top-left-radius: 0.5rem;
-          border-top-right-radius: 0.5rem;
+          border-radius: 0.5rem;
           transition: all 1s;
         }
       }
@@ -165,13 +164,10 @@
   
         .card-body {
           aspect-ratio: 1 / 1.3;
-          box-shadow:
-            0 4px 8px 0 rgba(0, 0, 0, 0.2),
-            0 6px 20px 0 rgba(0, 0, 0, 0.19);
           border-radius: 0.5rem;
           background-color: rgba(0, 0, 0, 0.599);
           padding: 1em;
-          border: 1px solid rgb(6, 24, 50);
+          border: 1px solid #0c2e34ad;
           overflow: auto;
           transform: scale(0);
           transition: all 0.95s;
