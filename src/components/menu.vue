@@ -303,7 +303,7 @@ html.dark .indicator {
 }
 
 html .indicator {
-  --color-indicator: rgba(0, 61, 107, 0.928);
+  --color-indicator: rgba(8, 26, 53, 0.654);
 }
 
 .indicator {

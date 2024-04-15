@@ -12,9 +12,6 @@
               <div class="card">
                 <div class="contents contentA">
                   <img :src="member.imgUrl" alt="" />
-                  <div class="card-body">
-                    <h4>{{ member.name }}</h4>
-                  </div>
                 </div>
                 <div class="contents contentB">
                   <div class="card-body">
@@ -34,10 +31,10 @@
   const members = {
     Leaders: [
       {
-        name: '',
+        name: 'RED',
         introduction:
-          '',
-        imgUrl: ''
+          'I am the student leader this year, and I am mainly responsible for external communication and human practice in the team. In my constant exploration, I discovered new worlds.',
+        imgUrl: 'https://static.igem.wiki/teams/4815/wiki/team11.png'
       },
       {
         name: '',
@@ -134,46 +131,27 @@
       position: relative;
       margin: 16px;
       font-size: 1rem;
+      overflow: hidden;
   
       .contents {
         transition: all 0.4s ease-out;
         flex-direction: column;
         border-radius: 0.5rem;
-        aspect-ratio: 1 / 1.5;
+        aspect-ratio: 1 / 1.3;
       }
   
       .contentA {
-        border: 1px solid rgba(108, 108, 108, 0.337);
-        // border-radius: 0.5rem;
+        border: 1px solid rgb(6, 24, 50);
         overflow: hidden;
         img {
           display: block;
           width: 100%;
-          aspect-ratio: 1 / 1.2;
+          aspect-ratio: 1 / 1.3;
           object-fit: cover;
           align-items: center;
           border-top-left-radius: 0.5rem;
           border-top-right-radius: 0.5rem;
-        }
-  
-        .card-body {
-          background-color: rgba(0, 43, 75, 0.269);
-          padding: 0.75rem 1rem;
-          width: 100%;
-          aspect-ratio: 1/0.3;
-          position: relative;
-          box-sizing: border-box;
-  
-          h4 {
-            color: var(--text-h4);
-            font-family: Museo Sans Rounded;
-            display: block;
-            text-align: center;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 2em;
-          }
+          transition: all 1s;
         }
       }
   
@@ -181,41 +159,35 @@
         position: absolute;
         top: 0;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.35);
         justify-content: center;
         align-items: center;
-        display: flex;
-        transform-style: preserve-3d;
-        transform: rotateX(180deg);
-        backface-visibility: hidden;
         perspective: 1000px;
   
         .card-body {
-          height: auto;
-          max-height: 95%;
-          max-width: 100%;
+          aspect-ratio: 1 / 1.3;
           box-shadow:
             0 4px 8px 0 rgba(0, 0, 0, 0.2),
             0 6px 20px 0 rgba(0, 0, 0, 0.19);
           border-radius: 0.5rem;
-          background-color: rgba(0, 0, 0, 0.55);
-          backdrop-filter: blur(2px);
+          background-color: rgba(0, 0, 0, 0.599);
           padding: 1em;
-          backface-visibility: hidden;
-          transform: translateZ(80px);
-          border: 1px solid rgba(255, 255, 255, 0.29);
+          border: 1px solid rgb(6, 24, 50);
           overflow: auto;
+          transform: scale(0);
+          transition: all 0.95s;
+
   
           h5,
           p {
-            color: aliceblue;
+            color: #f5e5db;
             margin-right: 5px;
+            font-family:'Nunito';
           }
   
           h5 {
             font-size: 2em;
-            margin-top: 0.5em;
-            margin-bottom: 0.5em;
+            margin-top: 1em;
+            margin-bottom: 1em;
           }
           p {
             font-size: 1.3em;
@@ -237,41 +209,13 @@
     }
   
     .card:hover {
-      .contentA {
-        transform: rotateX(180deg);
-      }
-  
-      .contentB {
-        transform: rotateX(0);
+     img{
+          transform: scale(2);
+        }
+      .contentB .card-body {
+        transform: scale(1);
       }
     }
-  
-    // @media (max-width: 1320px) {
-    //     .card {
-    //         font-size: 1.7rem;
-    //     }
-    // }
-  
-    // @media (max-width: 1100px) {
-    //     .card {
-    //         font-size: 1.2rem;
-    //     }
-    // }
-  
-    // @media (max-width: 640px) {
-    //     .card {
-    //         font-size: 1rem;
-    //     }
-    // }
-  }
-  html.dark .team {
-    --bg-card: #161618;
-    --text-h4: #f7f7f9;
-  }
-  
-  html .team {
-    --bg-card: #f7f7f9;
-    --text-h4: #6eb3a2;
   }
   </style>
   

@@ -153,8 +153,8 @@ watch(inMd, (val) => {
     .toggle {
         padding: 2px;
         width: 2.25rem;
-        color: #e6ffff;
-        border: 0px solid #e6ffff;
+        color: #f5e5db;
+        border: 0px solid #f5e5db;
         padding-top: 0.375rem;
         padding-right: 0.5rem;
         margin-left: 1rem;
@@ -177,7 +177,7 @@ watch(inMd, (val) => {
                 width: 100%;
                 height: 3px;
                 border-radius: 2px;
-                background-color: #e6ffff;
+                background-color: #d9a459;
                 transition: transform 0.3s ease;
             }
 
