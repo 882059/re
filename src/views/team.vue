@@ -34,7 +34,7 @@
         name: 'RED',
         introduction:
           'I am the student leader this year, and I am mainly responsible for external communication and human practice in the team. In my constant exploration, I discovered new worlds.',
-        imgUrl: 'https://static.igem.wiki/teams/4815/wiki/team11.png'
+        imgUrl: ''
       },
       {
         name: '',

@@ -135,7 +135,7 @@ function handleMouseLeave() {
 
   .ribbon {
     top: 0;
-    background-image: linear-gradient(to left, #103c4391 , #071c20);
+    background-image: linear-gradient(to left, #658396c8, #495e6b);
     position: absolute;
     height: 0px;
     width: 100%;
