@@ -52,7 +52,7 @@ On August 5, SZU-China participated in the special academic forum on Bioremediat
   </main>
 </template>
 
-<style>
+<style lang="scss" scoped>
 .logo{
   max-width: 160px;
   padding-top: 20px;

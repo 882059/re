@@ -119,7 +119,7 @@ function handleMouseLeave() {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .menu {
   position: sticky;
   top: 0;
@@ -135,7 +135,7 @@ function handleMouseLeave() {
 
   .ribbon {
     top: 0;
-    background-image: linear-gradient(to left, #658396c8, #495e6b);
+    background-image: linear-gradient(to left, #65839693, #495e6b);
     position: absolute;
     height: 0px;
     width: 100%;
@@ -285,7 +285,6 @@ function handleMouseLeave() {
 
 .indicator {
   position: absolute;
-  bottom: 10px;
   left: 0;
   width: 60px;
   height: 50px;
@@ -303,7 +302,7 @@ html.dark .indicator {
 }
 
 html .indicator {
-  --color-indicator: #0a2429da;
+  --color-indicator: #282b2d5b;
 }
 
 .indicator {
@@ -311,6 +310,6 @@ html .indicator {
 }
 
 .indicator.float {
-  background-color: #103941;
+  background-color: #333d3f;
 }
 </style>
